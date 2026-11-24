@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" font-family="Poppins, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#014999"/><stop offset="1" stop-color="#0174e0"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#fff" stroke-opacity="0.13" stroke-width="1"/>
+    </pattern>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#002b57" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect width="800" height="450" fill="url(#grid)"/>
+  <g opacity="0.9">
+    <circle cx="70" cy="70" r="26" fill="#E89A25" opacity="0.55"/>
+    <circle cx="735" cy="92" r="18" fill="#D92626" opacity="0.55"/>
+    <circle cx="740" cy="380" r="30" fill="#2DA800" opacity="0.45"/>
+    <circle cx="62" cy="382" r="16" fill="#2DA800" opacity="0.5"/>
+    <rect x="96" y="26" width="54" height="54" rx="12" fill="#fff" opacity="0.16" transform="rotate(-14 123 53)"/>
+    <rect x="666" y="348" width="62" height="62" rx="12" fill="#fff" opacity="0.14" transform="rotate(12 697 379)"/>
+  </g>
+  <rect x="64" y="58" width="672" height="334" rx="18" fill="#fff" filter="url(#sh)"/>
+  <path d="M64 92h672" stroke="#e0e6ee" stroke-width="1"/>
+  <text x="400" y="206" text-anchor="middle" font-size="52" font-weight="700" fill="#014999" letter-spacing="-1">FESTIVAL SENI</text>
+  <text x="400" y="252" text-anchor="middle" font-size="22" font-weight="500" fill="#0174e0">HMDTIF 2026</text>
+  <rect x="330" y="286" width="140" height="4" rx="2" fill="#E89A25"/>
+  <g fill="#E89A25" opacity="0.85">
+    <circle cx="118" cy="120" r="7"/><circle cx="682" cy="120" r="7"/>
+  </g>
+</svg>

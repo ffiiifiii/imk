@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.vercel/
+_react_backup/
+.DS_Store
+*.log
