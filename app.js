@@ -109,7 +109,12 @@ const humasFilters = [
 
 const medkrafMembers = ["Kemal", "Raka", "Sinta", "Bima", "Nadia", "Dimas"];
 const taskStatuses = ["Proses Desain", "Revisi Bahasa", "Revisi Desain"];
-const reviewStatuses = ["Pengecekan Hasil", "Revisi Desain", "Siap Unggah", "Selesai"];
+const reviewStatuses = [
+  "Pengecekan Hasil",
+  "Revisi Desain",
+  "Siap Unggah",
+  "Selesai",
+];
 
 const baseHistory = [
   ["Request terkirim → Pengecekan Form", "12 Nov, 09.12"],
@@ -148,24 +153,166 @@ function makeReq(p) {
 
 function initialReqs() {
   return [
-    makeReq({ id: 1, title: "Open Recruitment Magang", by: "Reyhan (PSDM)", byFull: "Reyhan · Dept. PSDM", type: "Reels", date: "14 Nov", dateFull: "14 November 2026", pic: "", status: "Pengecekan Form", desc: "Reels promosi Open Recruitment Magang 2026.", caption: "Yuk gabung Magang HMDTIF 2026! Info di bio.", historyCount: 1 }),
-    makeReq({ id: 2, title: "Workshop Desain", by: "Nisa (BPH)", byFull: "Nisa · BPH", type: "Feeds", date: "15 Nov", dateFull: "15 November 2026", pic: "Sinta", status: "Pengecekan Hasil", desc: "Feeds promosi Workshop Desain.", caption: "Yuk ikuti Workshop Desain HMDTIF!", link: "https://figma.com/design/workshop-desain", historyCount: 6 }),
-    makeReq({ id: 3, title: "Seminar Karier", by: "Dika (PSDM)", byFull: "Dika · PSDM", type: "Story", date: "16 Nov", dateFull: "16 November 2026", pic: "Kemal", status: "Revisi Bahasa", desc: "Story promosi Seminar Karier.", caption: "Daftar Seminar Karier sekarang!", link: "https://figma.com/design/seminar-karier", humasNote: 'Typo pada baris ke 3 : "pendaftran" → "pendaftaran".', historyCount: 4 }),
-    makeReq({ id: 4, title: "Donasi Pendidikan", by: "Alya (PSDI)", byFull: "Alya · PSDI", type: "Feeds", date: "17 Nov", dateFull: "17 November 2026", pic: "Nadia", status: "Siap Unggah", desc: "Feeds ajakan donasi pendidikan.", caption: "Bantu adik-adik tetap sekolah, donasi sekarang.", link: "https://figma.com/design/donasi-pendidikan", historyCount: 7 }),
-    makeReq({ id: 5, title: "Festival Seni", by: "Fajar (PIT)", byFull: "Fajar · PIT", type: "Reels", date: "18 Nov", dateFull: "18 November 2026", pic: "Dimas", status: "Selesai", desc: "Reels dokumentasi Festival Seni.", caption: "Terima kasih sudah hadir di Festival Seni!", link: "https://figma.com/design/festival-seni", historyCount: 8 }),
+    makeReq({
+      id: 1,
+      title: "Open Recruitment Magang",
+      by: "Reyhan (PSDM)",
+      byFull: "Reyhan · Dept. PSDM",
+      type: "Reels",
+      date: "14 Nov",
+      dateFull: "14 November 2026",
+      pic: "",
+      status: "Pengecekan Form",
+      desc: "Reels promosi Open Recruitment Magang 2026.",
+      caption: "Yuk gabung Magang HMDTIF 2026! Info di bio.",
+      historyCount: 1,
+    }),
+    makeReq({
+      id: 2,
+      title: "Workshop Desain",
+      by: "Nisa (BPH)",
+      byFull: "Nisa · BPH",
+      type: "Feeds",
+      date: "15 Nov",
+      dateFull: "15 November 2026",
+      pic: "Sinta",
+      status: "Pengecekan Hasil",
+      desc: "Feeds promosi Workshop Desain.",
+      caption: "Yuk ikuti Workshop Desain HMDTIF!",
+      link: "https://figma.com/design/workshop-desain",
+      historyCount: 6,
+    }),
+    makeReq({
+      id: 3,
+      title: "Seminar Karier",
+      by: "Dika (PSDM)",
+      byFull: "Dika · PSDM",
+      type: "Story",
+      date: "16 Nov",
+      dateFull: "16 November 2026",
+      pic: "Kemal",
+      status: "Revisi Bahasa",
+      desc: "Story promosi Seminar Karier.",
+      caption: "Daftar Seminar Karier sekarang!",
+      link: "https://figma.com/design/seminar-karier",
+      humasNote: 'Typo pada baris ke 3 : "pendaftran" → "pendaftaran".',
+      historyCount: 4,
+    }),
+    makeReq({
+      id: 4,
+      title: "Donasi Pendidikan",
+      by: "Alya (PSDI)",
+      byFull: "Alya · PSDI",
+      type: "Feeds",
+      date: "17 Nov",
+      dateFull: "17 November 2026",
+      pic: "Nadia",
+      status: "Siap Unggah",
+      desc: "Feeds ajakan donasi pendidikan.",
+      caption: "Bantu adik-adik tetap sekolah, donasi sekarang.",
+      link: "https://figma.com/design/donasi-pendidikan",
+      historyCount: 7,
+    }),
+    makeReq({
+      id: 5,
+      title: "Festival Seni",
+      by: "Fajar (PIT)",
+      byFull: "Fajar · PIT",
+      type: "Reels",
+      date: "18 Nov",
+      dateFull: "18 November 2026",
+      pic: "Dimas",
+      status: "Selesai",
+      desc: "Reels dokumentasi Festival Seni.",
+      caption: "Terima kasih sudah hadir di Festival Seni!",
+      link: "https://figma.com/design/festival-seni",
+      historyCount: 8,
+    }),
   ];
 }
 
 function initialNotifs() {
   return [
-    { id: 1, role: "pengaju", title: "Draf siap ditinjau", body: "Workshop Desain · sisa revisi 1x", time: "5 menit lalu", unread: true, page: { name: "p_review" }, reqId: 2 },
-    { id: 2, role: "pengaju", title: "Request diterima Humas", body: "Donasi Pendidikan · PIC: Nadia", time: "Kemarin", unread: false, page: { name: "p_status" }, reqId: 4 },
-    { id: 3, role: "pengaju", title: "Konten sudah diunggah", body: "Festival Seni · Selesai", time: "2 hari lalu", unread: false, page: { name: "p_status" }, reqId: 5 },
-    { id: 4, role: "humas", title: "Request baru masuk", body: "Open Recruitment Magang · Reyhan (PSDM)", time: "2 menit lalu", unread: true, page: { name: "h_list", filter: "Pengecekan Form" }, reqId: 1 },
-    { id: 5, role: "humas", title: "Pengaju menyetujui draf", body: "Donasi Pendidikan · Siap Unggah", time: "1 jam lalu", unread: true, page: { name: "h_list", filter: "Siap Unggah" }, reqId: 4 },
-    { id: 6, role: "humas", title: "Hasil desain siap diperiksa", body: "Seminar Karier · dari Kemal (MedKraf)", time: "Kemarin", unread: true, page: { name: "h_list", filter: "Revisi Bahasa" }, reqId: 3 },
-    { id: 7, role: "medkraf", title: "Catatan koreksi Bahasa", body: "Seminar Karier · Typo pada baris ke 3", time: "1 jam lalu", unread: true, page: { name: "m_task" }, reqId: 3 },
-    { id: 8, role: "medkraf", title: "Tugas baru dari Humas", body: "Seminar Karier · unggah 16 Nov", time: "2 hari lalu", unread: true, page: { name: "m_task" }, reqId: 3 },
+    {
+      id: 1,
+      role: "pengaju",
+      title: "Draf siap ditinjau",
+      body: "Workshop Desain · sisa revisi 1x",
+      time: "5 menit lalu",
+      unread: true,
+      page: { name: "p_review" },
+      reqId: 2,
+    },
+    {
+      id: 2,
+      role: "pengaju",
+      title: "Request diterima Humas",
+      body: "Donasi Pendidikan · PIC: Nadia",
+      time: "Kemarin",
+      unread: false,
+      page: { name: "p_status" },
+      reqId: 4,
+    },
+    {
+      id: 3,
+      role: "pengaju",
+      title: "Konten sudah diunggah",
+      body: "Festival Seni · Selesai",
+      time: "2 hari lalu",
+      unread: false,
+      page: { name: "p_status" },
+      reqId: 5,
+    },
+    {
+      id: 4,
+      role: "humas",
+      title: "Request baru masuk",
+      body: "Open Recruitment Magang · Reyhan (PSDM)",
+      time: "2 menit lalu",
+      unread: true,
+      page: { name: "h_list", filter: "Pengecekan Form" },
+      reqId: 1,
+    },
+    {
+      id: 5,
+      role: "humas",
+      title: "Pengaju menyetujui draf",
+      body: "Donasi Pendidikan · Siap Unggah",
+      time: "1 jam lalu",
+      unread: true,
+      page: { name: "h_list", filter: "Siap Unggah" },
+      reqId: 4,
+    },
+    {
+      id: 6,
+      role: "humas",
+      title: "Hasil desain siap diperiksa",
+      body: "Seminar Karier · dari Kemal (MedKraf)",
+      time: "Kemarin",
+      unread: true,
+      page: { name: "h_list", filter: "Revisi Bahasa" },
+      reqId: 3,
+    },
+    {
+      id: 7,
+      role: "medkraf",
+      title: "Catatan koreksi Bahasa",
+      body: "Seminar Karier · Typo pada baris ke 3",
+      time: "1 jam lalu",
+      unread: true,
+      page: { name: "m_task" },
+      reqId: 3,
+    },
+    {
+      id: 8,
+      role: "medkraf",
+      title: "Tugas baru dari Humas",
+      body: "Seminar Karier · unggah 16 Nov",
+      time: "2 hari lalu",
+      unread: true,
+      page: { name: "m_task" },
+      reqId: 3,
+    },
   ];
 }
 
@@ -197,10 +344,20 @@ const S = {
    -------------------------------------------------------------------------- */
 const $app = document.getElementById("app");
 const esc = (v) =>
-  String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  String(v ?? "").replace(
+    /[&<>"']/g,
+    (c) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
+        c
+      ],
+  );
 
 const homePage = (role) =>
-  role === "pengaju" ? { name: "p_request" } : role === "humas" ? { name: "h_list", filter: "Pengecekan Form" } : { name: "m_task" };
+  role === "pengaju"
+    ? { name: "p_request" }
+    : role === "humas"
+      ? { name: "h_list", filter: "Pengecekan Form" }
+      : { name: "m_task" };
 
 function roleOfPage(page) {
   if (page.name === "login") return page.role;
@@ -218,7 +375,20 @@ function today() {
 
 function stamp() {
   const d = new Date();
-  const months = ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"];
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "Mei",
+    "Jun",
+    "Jul",
+    "Agu",
+    "Sep",
+    "Okt",
+    "Nov",
+    "Des",
+  ];
   const pad = (n) => String(n).padStart(2, "0");
   return `${d.getDate()} ${months[d.getMonth()]}, ${pad(d.getHours())}.${pad(d.getMinutes())}`;
 }
@@ -269,9 +439,12 @@ function linkError(value, domain, label) {
     return `Gunakan tautan http/https, mis. https://${domain}/...`;
   }
   const host = u.hostname.toLowerCase();
-  const ok = domain === "figma.com"
-    ? host === "figma.com" || host.endsWith(".figma.com")
-    : host === "instagram.com" || host.endsWith(".instagram.com") || host === "instagr.am";
+  const ok =
+    domain === "figma.com"
+      ? host === "figma.com" || host.endsWith(".figma.com")
+      : host === "instagram.com" ||
+        host.endsWith(".instagram.com") ||
+        host === "instagr.am";
   return ok ? "" : `Tautan harus dari ${domain}, mis. https://${domain}/...`;
 }
 
@@ -322,14 +495,16 @@ function requestTable(rows, empty = "Belum ada pengajuan.") {
   const body = rows.length
     ? rows
         .map(
-          (r) => `<tr class="${S.selectedId === r.id ? "selected" : ""}" data-act="select" data-id="${r.id}">
+          (
+            r,
+          ) => `<tr class="${S.selectedId === r.id ? "selected" : ""}" data-act="select" data-id="${r.id}">
             <td title="${esc(r.title)}"><span class="cell">${esc(r.title)}</span></td>
             <td title="${esc(r.by)}"><span class="cell">${esc(r.by)}</span></td>
             <td><span class="cell">${esc(r.type)}</span></td>
             <td><span class="cell">${esc(r.date)}</span></td>
             <td><span class="cell">${esc(r.pic || "-")}</span></td>
             <td>${statusPill(r.status, true)}</td>
-          </tr>`
+          </tr>`,
         )
         .join("")
     : `<tr class="empty-row"><td colspan="6">${esc(empty)}</td></tr>`;
@@ -364,11 +539,16 @@ function rolePicker() {
       <div class="role-grid">
         ${cards
           .map(
-            ([role, icon, desc, tone]) => `<button class="role-card ${tone}" data-act="role" data-role="${role}">
+            ([
+              role,
+              icon,
+              desc,
+              tone,
+            ]) => `<button class="role-card ${tone}" data-act="role" data-role="${role}">
               <span class="role-icon"><img src="${A}/${icon}" alt="" /></span>
               <span>Masuk sebagai<strong>${roleData[role].label}</strong></span>
               <small>${desc}</small><b>Lanjut&nbsp; →</b>
-            </button>`
+            </button>`,
           )
           .join("")}
       </div>
@@ -401,7 +581,12 @@ function sidebar() {
   const items =
     S.role === "pengaju"
       ? [
-          ["Ajukan Permintaan", "54fbe.svg", { name: "p_request" }, ["p_request", "profile"]],
+          [
+            "Ajukan Permintaan",
+            "54fbe.svg",
+            { name: "p_request" },
+            ["p_request", "profile"],
+          ],
           ["Tinjau & Revisi", "e0886.svg", { name: "p_review" }, ["p_review"]],
           ["Status & Riwayat", "e6d93.svg", { name: "p_status" }, ["p_status"]],
         ]
@@ -412,9 +597,14 @@ function sidebar() {
     ${brand()}
     <nav>${items
       .map(
-        ([label, icon, to, active]) => `<button class="${active.includes(S.page.name) ? "nav-active" : ""}" data-act="nav" data-page="${esc(JSON.stringify(to))}">
+        ([
+          label,
+          icon,
+          to,
+          active,
+        ]) => `<button class="${active.includes(S.page.name) ? "nav-active" : ""}" data-act="nav" data-page="${esc(JSON.stringify(to))}">
           <img src="${A}/${icon}" alt="" /><span>${label}</span>
-        </button>`
+        </button>`,
       )
       .join("")}</nav>
   </aside>`;
@@ -449,9 +639,11 @@ function notifications() {
     ${items.length === 0 ? '<p class="empty-note">Belum ada notifikasi.</p>' : ""}
     ${items
       .map(
-        (n) => `<button class="${n.unread ? "unread" : ""}" data-act="notif" data-id="${n.id}" data-page="${esc(JSON.stringify(n.page))}">
+        (
+          n,
+        ) => `<button class="${n.unread ? "unread" : ""}" data-act="notif" data-id="${n.id}" data-page="${esc(JSON.stringify(n.page))}">
           <i></i><span><strong>${esc(n.title)}</strong><small>${esc(n.body)}</small><em>${esc(n.time)}</em></span>
-        </button>`
+        </button>`,
       )
       .join("")}
   </div>`;
@@ -463,15 +655,44 @@ function profile() {
   const count = (...st) => S.reqs.filter((r) => st.includes(r.status)).length;
   const stats =
     S.role === "pengaju"
-      ? [[S.reqs.length, "Total Pengajuan"], [S.reqs.filter((r) => r.status !== "Selesai" && r.status !== "Ditolak").length, "Sedang Diproses"], [count("Selesai"), "Selesai"]]
+      ? [
+          [S.reqs.length, "Total Pengajuan"],
+          [
+            S.reqs.filter(
+              (r) => r.status !== "Selesai" && r.status !== "Ditolak",
+            ).length,
+            "Sedang Diproses",
+          ],
+          [count("Selesai"), "Selesai"],
+        ]
       : S.role === "humas"
-        ? [[count("Pengecekan Form"), "Menunggu Keputusan"], [count("Pengecekan Bahasa"), "Cek Bahasa"], [count("Siap Unggah"), "Siap Unggah"]]
-        : [[S.reqs.filter((r) => r.pic === S.medName && taskStatuses.includes(r.status)).length, "Tugas Aktif"], [S.reqs.filter((r) => r.pic === S.medName && r.status === "Pengecekan Bahasa").length, "Menunggu Pemeriksaan"]];
+        ? [
+            [count("Pengecekan Form"), "Menunggu Keputusan"],
+            [count("Pengecekan Bahasa"), "Cek Bahasa"],
+            [count("Siap Unggah"), "Siap Unggah"],
+          ]
+        : [
+            [
+              S.reqs.filter(
+                (r) => r.pic === S.medName && taskStatuses.includes(r.status),
+              ).length,
+              "Tugas Aktif",
+            ],
+            [
+              S.reqs.filter(
+                (r) => r.pic === S.medName && r.status === "Pengecekan Bahasa",
+              ).length,
+              "Menunggu Pemeriksaan",
+            ],
+          ];
   const rows = [
     ["Nama lengkap", name],
     ["Peran", d.label],
     [d.unitLabel, d.unit],
-    ["Email", S.role === "medkraf" ? `${name.toLowerCase()}@hmdtif.example` : d.email],
+    [
+      "Email",
+      S.role === "medkraf" ? `${name.toLowerCase()}@hmdtif.example` : d.email,
+    ],
     ["Bergabung sejak", "Januari 2026"],
   ];
   return `<div class="profile-grid">
@@ -523,7 +744,10 @@ function pRequest() {
       ${S.reqs
         .slice(-2)
         .reverse()
-        .map((r) => `<div class="mini-task"><strong>${esc(r.title)}</strong><span>${esc(r.type)} · unggah ${esc(r.date)}</span>${statusPill(r.status, true)}</div>`)
+        .map(
+          (r) =>
+            `<div class="mini-task"><strong>${esc(r.title)}</strong><span>${esc(r.type)} · unggah ${esc(r.date)}</span>${statusPill(r.status, true)}</div>`,
+        )
         .join("")}
     </aside>
   </div>`;
@@ -537,18 +761,29 @@ function pReview() {
   const reviewTable = `<div class="table-scroll review-table"><table class="fixed-table">
     <colgroup><col style="width:36%" /><col style="width:36%" /><col style="width:28%" /></colgroup>
     <thead><tr><th>Judul</th><th>Status</th><th>Aksi</th></tr></thead>
-    <tbody>${list.length
-      ? list.map((r) => `<tr class="${cur && cur.id === r.id ? "selected" : ""}"><td><span class="cell"><b>${esc(r.title)}</b></span></td><td>${statusPill(r.status, true)}</td><td><button class="button primary mini" data-act="select" data-id="${r.id}">Detail</button></td></tr>`).join("")
-      : '<tr class="empty-row"><td colspan="3">Belum ada konten.</td></tr>'}</tbody>
+    <tbody>${
+      list.length
+        ? list
+            .map(
+              (r) =>
+                `<tr class="${cur && cur.id === r.id ? "selected" : ""}"><td><span class="cell"><b>${esc(r.title)}</b></span></td><td>${statusPill(r.status, true)}</td><td><button class="button primary mini" data-act="select" data-id="${r.id}">Detail</button></td></tr>`,
+            )
+            .join("")
+        : '<tr class="empty-row"><td colspan="3">Belum ada konten.</td></tr>'
+    }</tbody>
   </table></div>`;
   return `<div class="review-grid">
     <section class="card review-card">
       <h2>Tinjau &amp; Revisi Desain</h2>
-      ${cur ? `<span class="self">${statusPill(cur.status)}</span>
+      ${
+        cur
+          ? `<span class="self">${statusPill(cur.status)}</span>
         ${field(`Draf Desain — ${cur.title}`, false, "", `<input readonly value="${esc(cur.link)}" placeholder="https://figma.com" />`)}
         ${preview(cur.preview)}
         <div class="tabs two">${["Versi 1", "Versi 2"].map((v) => `<button class="${S.version === v ? "active" : ""}" data-act="version" data-value="${v}">${v}</button>`).join("")}</div>
-        ${field("Caption", false, "", `<input readonly value="${esc(cur.caption)}" />`)}` : '<p class="empty-state">Belum ada draf yang perlu ditinjau.</p>'}
+        ${field("Caption", false, "", `<input readonly value="${esc(cur.caption)}" />`)}`
+          : '<p class="empty-state">Belum ada draf yang perlu ditinjau.</p>'
+      }
     </section>
     <aside class="card side-card">
       <h2>Revisi Desain</h2>
@@ -573,7 +808,12 @@ function pStatus() {
         ${steps
           .map((label, i) => {
             const n = i + 1;
-            const state = n < step || (step === 8 && n === 8) ? "done" : n === step ? "now" : "todo";
+            const state =
+              n < step || (step === 8 && n === 8)
+                ? "done"
+                : n === step
+                  ? "now"
+                  : "todo";
             return `<li class="${state}"><span>${state === "done" ? '<svg viewBox="0 0 16 16"><path d="M3.5 8.5l3 3 6-7" /></svg>' : n}</span><small>${esc(label)}</small></li>`;
           })
           .join("")}
@@ -591,11 +831,13 @@ function pStatus() {
 
 function hList() {
   const filter = S.page.filter || "Pengecekan Form";
-  const rows = filter === "Semua" ? S.reqs : S.reqs.filter((r) => r.status === filter);
+  const rows =
+    filter === "Semua" ? S.reqs : S.reqs.filter((r) => r.status === filter);
   const cur = rows.find((r) => r.id === S.selectedId) || rows[0];
   let detailHtml = "";
   if (!cur) {
-    detailHtml = '<section class="card detail-card"><h2>Detail Pengajuan</h2><p class="empty-state">Pilih pengajuan pada tabel untuk melihat detail dan tindakannya.</p></section>';
+    detailHtml =
+      '<section class="card detail-card"><h2>Detail Pengajuan</h2><p class="empty-state">Pilih pengajuan pada tabel untuk melihat detail dan tindakannya.</p></section>';
   } else if (cur.status === "Pengecekan Bahasa") {
     detailHtml = `<section class="card detail-card"><h2>Pengecekan Bahasa — ${esc(cur.title)}</h2>
       <a class="link-box" href="${esc(cur.link)}" target="_blank" rel="noreferrer"><span>${esc(cur.link)}</span></a>
@@ -637,7 +879,9 @@ function hList() {
 }
 
 function mTask() {
-  const list = S.reqs.filter((r) => r.pic === S.medName && taskStatuses.includes(r.status));
+  const list = S.reqs.filter(
+    (r) => r.pic === S.medName && taskStatuses.includes(r.status),
+  );
   const cur = list.find((r) => r.id === S.selectedId) || list[0];
   const form = cur
     ? `<h2 class="sub">Serahkan Hasil</h2>
@@ -648,11 +892,19 @@ function mTask() {
   return `<div class="task-grid">
     <section class="card task-card">
       <h2>Pengerjaan Desain</h2>
-      ${cur ? `${detail(cur)}
-        ${cur.humasNote || cur.pengajuNote ? `<h2 class="sub">Catatan Revisi</h2>
+      ${
+        cur
+          ? `${detail(cur)}
+        ${
+          cur.humasNote || cur.pengajuNote
+            ? `<h2 class="sub">Catatan Revisi</h2>
           <div class="note"><strong>Catatan Revisi Humas</strong><p>${esc(cur.humasNote || "Belum Ada")}</p></div>
-          <div class="note"><strong>Catatan Revisi Pengaju</strong><p>${esc(cur.pengajuNote || "Belum Ada")}</p></div>` : ""}
-        ${form}` : `<p class="empty-state">Belum ada tugas aktif untuk ${esc(S.medName)}.</p>`}
+          <div class="note"><strong>Catatan Revisi Pengaju</strong><p>${esc(cur.pengajuNote || "Belum Ada")}</p></div>`
+            : ""
+        }
+        ${form}`
+          : `<p class="empty-state">Belum ada tugas aktif untuk ${esc(S.medName)}.</p>`
+      }
     </section>
     <aside class="card task-list">
       <h2>Tugas Saya</h2>
@@ -689,18 +941,66 @@ function modal() {
   };
   const body = {
     p_success: `<p>Request "${esc(cur.title)}" tercatat dengan status Pengecekan Form. Humas akan memeriksa kelengkapannya.</p>`,
-    p_revisi: field("Deskripsi Revisi", true, S.modalErr, `<textarea class="tall" placeholder="Tulis semua masukan revisi dalam satu catatan." data-modal-input>${esc(S.modalVal)}</textarea>`),
-    p_konfirmasi: '<p>Revisi hanya dapat diajukan 1x dan hasilnya akan langsung diunggah. Pastikan semua masukan sudah ditulis.</p>',
+    p_revisi: field(
+      "Deskripsi Revisi",
+      true,
+      S.modalErr,
+      `<textarea class="tall" placeholder="Tulis semua masukan revisi dalam satu catatan." data-modal-input>${esc(S.modalVal)}</textarea>`,
+    ),
+    p_konfirmasi:
+      "<p>Revisi hanya dapat diajukan 1x dan hasilnya akan langsung diunggah. Pastikan semua masukan sudah ditulis.</p>",
     p_setujui: `<p>Apakah Anda yakin menyetujui draf "${esc(cur.title)}"? Setelah disetujui, status menjadi Siap Unggah.</p>`,
-    h_tolak: field("Alasan Penolakan", true, S.modalErr, `<textarea placeholder="Tulis alasan penolakan" data-modal-input>${esc(S.modalVal)}</textarea>`),
-    h_terima: field("Pilih PIC MedKraf", true, S.modalErr, `<select class="${S.modalVal ? "" : "empty"}" data-modal-input><option value="">Pilih anggota medkraf</option>${medkrafMembers.map((x) => `<option ${S.modalVal === x ? "selected" : ""}>${x}</option>`).join("")}</select>`),
-    h_unggah: field("Link Unggahan", true, S.modalErr, `<input placeholder="https://instagram.com/p/..." class="${S.modalVal ? "has-value" : ""}" data-modal-input value="${esc(S.modalVal)}" />`),
-    h_revisi_bahasa: field("Deskripsi Revisi", true, S.modalErr, `<textarea class="tall" placeholder="Tulis catatan koreksi Bahasa untuk MedKraf." data-modal-input>${esc(S.modalVal)}</textarea>`),
+    h_tolak: field(
+      "Alasan Penolakan",
+      true,
+      S.modalErr,
+      `<textarea placeholder="Tulis alasan penolakan" data-modal-input>${esc(S.modalVal)}</textarea>`,
+    ),
+    h_terima: field(
+      "Pilih PIC MedKraf",
+      true,
+      S.modalErr,
+      `<select class="${S.modalVal ? "" : "empty"}" data-modal-input><option value="">Pilih anggota medkraf</option>${medkrafMembers.map((x) => `<option ${S.modalVal === x ? "selected" : ""}>${x}</option>`).join("")}</select>`,
+    ),
+    h_unggah: field(
+      "Link Unggahan",
+      true,
+      S.modalErr,
+      `<input placeholder="https://instagram.com/p/..." class="${S.modalVal ? "has-value" : ""}" data-modal-input value="${esc(S.modalVal)}" />`,
+    ),
+    h_revisi_bahasa: field(
+      "Deskripsi Revisi",
+      true,
+      S.modalErr,
+      `<textarea class="tall" placeholder="Tulis catatan koreksi Bahasa untuk MedKraf." data-modal-input>${esc(S.modalVal)}</textarea>`,
+    ),
     h_teruskan: `<p>Draf "${esc(cur.title)}" akan diteruskan ke Pengaju untuk ditinjau.</p>`,
   }[m];
-  const cancel = { p_success: "Tutup", p_revisi: "Batal", p_konfirmasi: "Kembali", p_setujui: "Batal", h_tolak: "Batal", h_terima: "Batal", h_unggah: "Batal", h_revisi_bahasa: "Batal", h_teruskan: "Batal" }[m];
-  const confirm = { p_success: "Lihat Status", p_revisi: "Ajukan", p_konfirmasi: "Ya, Kirim Revisi", p_setujui: "Setujui", h_tolak: "Tolak", h_terima: "Tugaskan", h_unggah: "Selesai", h_revisi_bahasa: "Ajukan", h_teruskan: "Teruskan" }[m];
-  const iconHtml = icon[1] ? `<img class="m-icon ${icon[0] === "warn" ? "warn" : ""}" src="${A}/${icon[1]}" alt="" />` : `<span class="m-icon dot ${icon[0]}">${icon[0] === "orange" ? "✓" : "»"}</span>`;
+  const cancel = {
+    p_success: "Tutup",
+    p_revisi: "Batal",
+    p_konfirmasi: "Kembali",
+    p_setujui: "Batal",
+    h_tolak: "Batal",
+    h_terima: "Batal",
+    h_unggah: "Batal",
+    h_revisi_bahasa: "Batal",
+    h_teruskan: "Batal",
+  }[m];
+  const confirm = {
+    p_success: "Lihat Status",
+    p_revisi: "Ajukan",
+    p_konfirmasi: "Ya, Kirim Revisi",
+    p_setujui: "Setujui",
+    h_tolak: "Tolak",
+    h_terima: "Tugaskan",
+    h_unggah: "Selesai",
+    h_revisi_bahasa: "Ajukan",
+    h_teruskan: "Teruskan",
+  }[m];
+  const iconHtml = icon[1]
+    ? `<img class="m-icon ${icon[0] === "warn" ? "warn" : ""}" src="${A}/${icon[1]}" alt="" />`
+    : `<span class="m-icon dot ${icon[0]}">${icon[0] === "orange" ? "✓" : "»"}</span>`;
   return `<div class="modal-backdrop" data-act="modal-close">
     <section class="modal card" data-stop="1" role="dialog" aria-modal="true" aria-label="${titles[m]}">
       <button class="modal-close" data-act="modal-close" aria-label="Tutup"><img src="${A}/47fa3.svg" alt="" /></button>
@@ -715,7 +1015,12 @@ function modal() {
 }
 
 function shell(inner) {
-  const ambient = S.role === "pengaju" ? "b1f88.svg" : S.role === "humas" ? "6bee6.svg" : "e3734.svg";
+  const ambient =
+    S.role === "pengaju"
+      ? "b1f88.svg"
+      : S.role === "humas"
+        ? "6bee6.svg"
+        : "e3734.svg";
   return `<main class="app-shell">
     <img class="ambient ambient-app" src="${A}/${ambient}" alt="" />
     <div class="dashboard">
@@ -742,12 +1047,24 @@ function render() {
     return;
   }
   switch (S.page.name) {
-    case "profile": inner = profile(); break;
-    case "p_request": inner = pRequest(); break;
-    case "p_review": inner = pReview(); break;
-    case "p_status": inner = pStatus(); break;
-    case "h_list": inner = hList(); break;
-    case "m_task": inner = mTask(); break;
+    case "profile":
+      inner = profile();
+      break;
+    case "p_request":
+      inner = pRequest();
+      break;
+    case "p_review":
+      inner = pReview();
+      break;
+    case "p_status":
+      inner = pStatus();
+      break;
+    case "h_list":
+      inner = hList();
+      break;
+    case "m_task":
+      inner = mTask();
+      break;
   }
   $app.innerHTML = shell(inner);
 }
@@ -763,7 +1080,11 @@ $app.addEventListener("submit", (e) => {
     const email = form.email.value.trim();
     const pass = form.pass.value.trim();
     S.errors = {
-      email: !email ? "Email wajib diisi" : /^\S+@\S+\.\S+$/.test(email) ? "" : "Format email belum benar",
+      email: !email
+        ? "Email wajib diisi"
+        : /^\S+@\S+\.\S+$/.test(email)
+          ? ""
+          : "Format email belum benar",
       pass: pass ? "" : "Kata sandi wajib diisi",
     };
     if (S.errors.email || S.errors.pass) return render();
@@ -782,12 +1103,29 @@ $app.addEventListener("submit", (e) => {
     S.errors = {
       by: f.by ? "" : "Nama pengaju wajib diisi",
       title: f.title ? "" : "Judul pengajuan wajib diisi",
-      date: !f.date ? "Tanggal unggahan wajib diisi" : f.date < today() ? "Tanggal unggahan tidak boleh sebelum hari ini" : "",
+      date: !f.date
+        ? "Tanggal unggahan wajib diisi"
+        : f.date < today()
+          ? "Tanggal unggahan tidak boleh sebelum hari ini"
+          : "",
       desc: f.desc ? "" : "Deskripsi desain wajib diisi",
     };
     if (Object.values(S.errors).some(Boolean)) return render();
     const [y, m, d] = f.date.split("-").map(Number);
-    const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+    const months = [
+      "Januari",
+      "Februari",
+      "Maret",
+      "April",
+      "Mei",
+      "Juni",
+      "Juli",
+      "Agustus",
+      "September",
+      "Oktober",
+      "November",
+      "Desember",
+    ];
     const id = Math.max(0, ...S.reqs.map((r) => r.id)) + 1;
     const req = makeReq({
       id,
@@ -806,7 +1144,16 @@ $app.addEventListener("submit", (e) => {
     S.reqs.push(req);
     S.selectedId = id;
     S.form = { by: "", title: "", date: "", desc: "", caption: "" };
-    S.notifs.push({ id: Date.now(), role: "humas", title: "Request baru masuk", body: `${req.title} · ${req.by}`, time: "baru saja", unread: true, page: { name: "h_list", filter: "Pengecekan Form" }, reqId: id });
+    S.notifs.push({
+      id: Date.now(),
+      role: "humas",
+      title: "Request baru masuk",
+      body: `${req.title} · ${req.by}`,
+      time: "baru saja",
+      unread: true,
+      page: { name: "h_list", filter: "Pengecekan Form" },
+      reqId: id,
+    });
     S.modal = "p_success";
     render();
   }
@@ -827,7 +1174,10 @@ $app.addEventListener("input", (e) => {
   if (t.dataset.field === "design-link") {
     const req = S.reqs.find((r) => r.id === Number(t.dataset.id));
     if (req) req.link = t.value;
-    if (S.errors.designLink) { S.errors.designLink = ""; render(); }
+    if (S.errors.designLink) {
+      S.errors.designLink = "";
+      render();
+    }
     return;
   }
   if (t.hasAttribute("data-modal-input")) {
@@ -836,7 +1186,8 @@ $app.addEventListener("input", (e) => {
     if (t.tagName === "SELECT") t.classList.toggle("empty", !t.value);
     if (S.modalErr) {
       S.modalErr = "";
-      render();
+      const err = t.closest("label")?.querySelector(".err");
+      if (err) err.remove();
     }
   }
 });
@@ -849,7 +1200,8 @@ $app.addEventListener("change", (e) => {
   if (e.target.hasAttribute("data-modal-input")) {
     S.modalVal = e.target.value;
     e.target.classList.toggle("has-value", Boolean(e.target.value));
-    if (e.target.tagName === "SELECT") e.target.classList.toggle("empty", !e.target.value);
+    if (e.target.tagName === "SELECT")
+      e.target.classList.toggle("empty", !e.target.value);
   }
 });
 
@@ -861,45 +1213,83 @@ $app.addEventListener("click", (e) => {
   if (act === "role") return go({ name: "login", role: el.dataset.role });
   if (act === "roles") return go({ name: "roles" });
   if (act === "login-guest") return go(homePage(S.role));
-  if (act === "hint") { S.hint = !S.hint; return render(); }
+  if (act === "hint") {
+    S.hint = !S.hint;
+    return render();
+  }
   if (act === "home") return go(homePage(S.role));
   if (act === "nav") return go(JSON.parse(el.dataset.page));
   if (act === "filter") return go({ name: "h_list", filter: el.dataset.value });
-  if (act === "tab") { S.tab = el.dataset.value; return render(); }
-  if (act === "version") { S.version = el.dataset.value; return render(); }
-  if (act === "select") { S.selectedId = Number(el.dataset.id); return render(); }
+  if (act === "tab") {
+    S.tab = el.dataset.value;
+    return render();
+  }
+  if (act === "version") {
+    S.version = el.dataset.value;
+    return render();
+  }
+  if (act === "select") {
+    S.selectedId = Number(el.dataset.id);
+    return render();
+  }
   if (act === "bell") {
-    const notifPage = S.role === "pengaju" ? { name: "p_review" } : S.role === "humas" ? { name: "h_list", filter: "Pengecekan Form" } : { name: "m_task" };
+    const notifPage =
+      S.role === "pengaju"
+        ? { name: "p_review" }
+        : S.role === "humas"
+          ? { name: "h_list", filter: "Pengecekan Form" }
+          : { name: "m_task" };
     return S.notif ? go(homePage(S.role)) : go(notifPage, { notif: true });
   }
-  if (act === "avatar") return S.page.name === "profile" ? go(homePage(S.role)) : go({ name: "profile" });
+  if (act === "avatar")
+    return S.page.name === "profile"
+      ? go(homePage(S.role))
+      : go({ name: "profile" });
   if (act === "notif") {
     const n = S.notifs.find((x) => x.id === Number(el.dataset.id));
-    if (n) { n.unread = false; if (n.reqId) S.selectedId = n.reqId; }
+    if (n) {
+      n.unread = false;
+      if (n.reqId) S.selectedId = n.reqId;
+    }
     return go(JSON.parse(el.dataset.page));
   }
   if (act === "copy") {
     const cur = currentReq();
-    if (navigator.clipboard) navigator.clipboard.writeText(cur.caption).catch(() => undefined);
-    S.copied = true; render();
-    setTimeout(() => { S.copied = false; render(); }, 1600);
+    if (navigator.clipboard)
+      navigator.clipboard.writeText(cur.caption).catch(() => undefined);
+    S.copied = true;
+    render();
+    setTimeout(() => {
+      S.copied = false;
+      render();
+    }, 1600);
     return;
   }
   if (act === "modal") {
     if (el.dataset.modal === "h_unggah") {
-      S.errors.designLink = linkError(currentReq().link, "figma.com", "Link desain");
+      S.errors.designLink = linkError(
+        currentReq().link,
+        "figma.com",
+        "Link desain",
+      );
       if (S.errors.designLink) return render();
     }
-    S.modal = el.dataset.modal; S.modalVal = ""; S.modalErr = ""; return render();
+    S.modal = el.dataset.modal;
+    S.modalVal = "";
+    S.modalErr = "";
+    return render();
   }
   if (act === "modal-close") {
     const isCloseButton = el.classList.contains("modal-close");
     if (!isCloseButton && e.target.closest("[data-stop]")) return;
-    S.modal = null; return render();
+    S.modal = null;
+    return render();
   }
   if (act === "modal-cancel") {
-    if (S.modal === "p_konfirmasi") { S.modal = "p_revisi"; S.modalVal = S.draft; }
-    else S.modal = null;
+    if (S.modal === "p_konfirmasi") {
+      S.modal = "p_revisi";
+      S.modalVal = S.draft;
+    } else S.modal = null;
     S.modalErr = "";
     return render();
   }
@@ -910,7 +1300,10 @@ $app.addEventListener("click", (e) => {
     S.errors.link = linkError(val, "figma.com", "Tautan Figma / file hasil");
     if (S.errors.link) return render();
     const req = S.reqs.find((r) => r.id === Number(el.dataset.id));
-    if (req) { req.link = val; setStatus(req, "Pengecekan Bahasa"); }
+    if (req) {
+      req.link = val;
+      setStatus(req, "Pengecekan Bahasa");
+    }
     S.errors = {};
     return go({ name: "h_list", filter: "Pengecekan Form" });
   }
@@ -926,34 +1319,83 @@ function confirmModal(m) {
     fn();
   };
   switch (m) {
-    case "p_success": return go({ name: "p_status" });
-    case "p_revisi": return guard(val ? "" : "Deskripsi revisi wajib diisi", () => { S.draft = val; S.modal = "p_konfirmasi"; render(); });
+    case "p_success":
+      return go({ name: "p_status" });
+    case "p_revisi":
+      return guard(val ? "" : "Deskripsi revisi wajib diisi", () => {
+        S.draft = val;
+        S.modal = "p_konfirmasi";
+        render();
+      });
     case "p_konfirmasi":
-      if (cur) { setStatus(cur, "Revisi Desain"); cur.pengajuNote = S.draft; cur.revisiLeft -= 1; }
+      if (cur) {
+        setStatus(cur, "Revisi Desain");
+        cur.pengajuNote = S.draft;
+        cur.revisiLeft -= 1;
+      }
       return go({ name: "m_task" });
-    case "p_setujui": if (cur) setStatus(cur, "Siap Unggah"); return go({ name: "h_list", filter: "Siap Unggah" });
-    case "h_tolak": return guard(val ? "" : "Alasan penolakan wajib diisi", () => { if (cur) { cur.rejectReason = val; setStatus(cur, "Ditolak"); } go({ name: "h_list", filter: "Pengecekan Form" }); });
-    case "h_terima": return guard(val ? "" : "PIC MedKraf wajib dipilih", () => { if (cur) { cur.pic = val; S.medName = val; setStatus(cur, "Proses Desain"); } go({ name: "m_task" }); });
-    case "h_unggah": return guard(linkError(val, "instagram.com", "Link unggahan"), () => { if (cur) { cur.uploadLink = val; setStatus(cur, "Selesai"); } go({ name: "p_status" }); });
-    case "h_revisi_bahasa": return guard(val ? "" : "Deskripsi revisi wajib diisi", () => { if (cur) { setStatus(cur, "Revisi Bahasa"); cur.humasNote = val; } go({ name: "m_task" }); });
-    case "h_teruskan": if (cur) setStatus(cur, "Pengecekan Hasil"); return go({ name: "p_review" });
+    case "p_setujui":
+      if (cur) setStatus(cur, "Siap Unggah");
+      return go({ name: "h_list", filter: "Siap Unggah" });
+    case "h_tolak":
+      return guard(val ? "" : "Alasan penolakan wajib diisi", () => {
+        if (cur) {
+          cur.rejectReason = val;
+          setStatus(cur, "Ditolak");
+        }
+        go({ name: "h_list", filter: "Pengecekan Form" });
+      });
+    case "h_terima":
+      return guard(val ? "" : "PIC MedKraf wajib dipilih", () => {
+        if (cur) {
+          cur.pic = val;
+          S.medName = val;
+          setStatus(cur, "Proses Desain");
+        }
+        go({ name: "m_task" });
+      });
+    case "h_unggah":
+      return guard(linkError(val, "instagram.com", "Link unggahan"), () => {
+        if (cur) {
+          cur.uploadLink = val;
+          setStatus(cur, "Selesai");
+        }
+        go({ name: "p_status" });
+      });
+    case "h_revisi_bahasa":
+      return guard(val ? "" : "Deskripsi revisi wajib diisi", () => {
+        if (cur) {
+          setStatus(cur, "Revisi Bahasa");
+          cur.humasNote = val;
+        }
+        go({ name: "m_task" });
+      });
+    case "h_teruskan":
+      if (cur) setStatus(cur, "Pengecekan Hasil");
+      return go({ name: "p_review" });
   }
 }
 
 document.addEventListener("keydown", (e) => {
   if (e.key !== "Escape") return;
-  if (S.modal) { S.modal = null; render(); }
-  else if (S.notif) { S.notif = false; render(); }
-});
-
-document.addEventListener("click", (e) => {
-  if (S.notif && !e.target.closest(".notification") && !e.target.closest("[data-act='bell']")) {
+  if (S.modal) {
+    S.modal = null;
+    render();
+  } else if (S.notif) {
     S.notif = false;
     render();
   }
 });
 
-/* --------------------------------------------------------------------------
-   BOOT
-   -------------------------------------------------------------------------- */
+document.addEventListener("click", (e) => {
+  if (
+    S.notif &&
+    !e.target.closest(".notification") &&
+    !e.target.closest("[data-act='bell']")
+  ) {
+    S.notif = false;
+    render();
+  }
+});
+
 render();

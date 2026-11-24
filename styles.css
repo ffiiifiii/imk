@@ -103,7 +103,8 @@
 
 .page-fade,
 .fade-in {
-  animation: fade 0.2s ease-out;
+  /* tanpa animasi: render ulang tidak boleh membuat tampilan berkedip */
+  animation: none;
 }
 
 /* --------------------------------------------------------------------------
@@ -1553,7 +1554,7 @@ a.link-box:hover {
   max-height: 70vh;
   overflow-y: auto;
   padding: var(--sp-4);
-  animation: fade 0.2s ease-out;
+  animation: none;
 }
 
 .notification h3 {
@@ -1647,7 +1648,7 @@ a.link-box:hover {
   font-size: 13px;
   font-weight: 500;
   transform: translateX(-50%);
-  animation: toast-in 0.25s ease-out;
+  animation: none;
 }
 
 /* --------------------------------------------------------------------------
@@ -1661,7 +1662,7 @@ a.link-box:hover {
   place-items: center;
   padding: var(--sp-6);
   background: rgba(17, 17, 17, 0.4);
-  animation: fade 0.2s ease-out;
+  animation: none;
 }
 
 .modal {
